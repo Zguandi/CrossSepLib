@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crosseplib"
+version = "0.1.0"
+description = "Angular-C_ell CMB component separation for galaxy-tSZ cross-correlation analysis"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.23",
+    "scipy>=1.9",
+    "pyyaml>=6.0",
+    "astropy>=5.0",
+    "healpy>=1.16",
+]
+
+[project.optional-dependencies]
+fitting = ["emcee>=3.1", "corner>=2.2"]
+test = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+include = ["crosseplib*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
